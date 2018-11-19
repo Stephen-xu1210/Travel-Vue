@@ -36,11 +36,12 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'styles': resolve('src/assets/styles'),
     }
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -50,6 +51,23 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      }, 
+      {
+        test:/\.css$/,
+        use:[
+            'style-loader',
+            'css-loader'
+            ],
+        include:[]
+      },
+      {
+        test:/\.styl/,
+         use:[
+              'style-loader',
+              'css-loader',
+              'stylus-loader'
+             ],
+        include:[]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -59,6 +77,7 @@ module.exports = {
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
+      
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
