@@ -21,7 +21,7 @@
 	但是在style样式中 如若使用@   前面一定要加~    即~@
 
 
-	scpoed属性  是为了让之中的css样式  只在当前页面生效   这样不会与其他页面css冲突
+	scoped属性  是为了让之中的css样式  只在当前页面生效   这样不会与其他页面css冲突
  -->
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
