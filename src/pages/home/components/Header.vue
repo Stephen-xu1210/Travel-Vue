@@ -1,7 +1,7 @@
 <template>
 	<div class="header">
 		<div class="header-left">
-			<span class="iconfont">&#xe624;</span>
+			<span class="iconfont header-icon-one">&#xe624;</span>
 		</div>
 		<div class="header-input">
 			<span class="iconfont">&#xe632;</span>
@@ -21,7 +21,7 @@
 	但是在style样式中 如若使用@   前面一定要加~    即~@
 
 
-	scpoed属性  是为了让之中的css样式  只在当前页面生效   这样不会与其他页面css冲突
+	scoped属性  是为了让之中的css样式  只在当前页面生效   这样不会与其他页面css冲突
  -->
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
@@ -41,12 +41,16 @@
 	border-radius:.1rem
 	margin-top:.12rem
 	margin-left:.2rem
+	padding-left:.2rem
 .header-left
 	width:.64rem
 	float:left
 .header-right
-	width:1.24rem
+	width:1.14rem
 	float:right
+	margin-left:.1rem
 .city-icon
 	font-size:.24rem
+.header-icon-one
+	margin-left:.2rem
 </style>
