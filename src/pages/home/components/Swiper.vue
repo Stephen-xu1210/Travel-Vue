@@ -2,11 +2,10 @@
 	<div class="wrapper">
 		<swiper :options="swiperOption">
 	    <!-- slides -->
-	    <swiper-slide v-for="item of swiperList">
+	    <swiper-slide v-for="item of swiperList" :key="item.id">
 	    	<img 
 	    	 class="swiper-img"
 	    	 :src="item.imgUrl"
-	    	 :key="item.id"
 	    	  alt="">
 	    </swiper-slide>
 <!-- 	    <swiper-slide>
