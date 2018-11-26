@@ -7,14 +7,18 @@
 			<span class="iconfont">&#xe632;</span>
 			输入城市/景点/游玩主题
 		</div>
-		<div class="header-right">城市
+		<div class="header-right">
+			{{this.city}}
 			<span class="iconfont city-icon">&#xe64a;</span>
 		</div>
 	</div>
 </template>
 <script>
   export default{
-    name : 'HomeHeader'
+    name : 'HomeHeader',
+    props:{
+    	city:String
+    }
   }
 </script>
 <!-- @符号是代表src目录  通常路径写为'@/assets/.../...'就可以找到src下的文件
