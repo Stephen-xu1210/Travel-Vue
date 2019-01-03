@@ -38,6 +38,12 @@ export default{
 		getCItyInfo(){
 			axios.get('/api/city.json')
 			.then(this.getCItyInfoSucc)
+			// const Url = 'http://192.168.3.224:9080/travel/city'
+			// axios({
+			// 	methods:'get',
+			// 	url:Url
+			// })
+			//  .then(this.getCItyInfoSucc)
 		},
 		getCItyInfoSucc(res){
 			res = res.data

@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import App from './App'
 import router from './router'
+import store from './store'
 import fastClick from 'fastclick'
 import Home from './pages/home/Home'
 import 'styles/reset.css'
@@ -17,6 +18,7 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
