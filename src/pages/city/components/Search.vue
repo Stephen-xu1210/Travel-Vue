@@ -62,7 +62,9 @@ export default{
 		}
 	},
 	mounted(){
-		this.scroll = new Bscroll(this.$refs.search)
+		this.$nextTick(function(){
+			this.scroll = new Bscroll(this.$refs.search,{click:true})
+		})
 	},
 	methods:{
 		handleCityClick(city){

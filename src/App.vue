@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <router-view/>
+  	<!-- keep-alive 里的内容已经被缓存起来了 不用每次都重新渲染页面 -->
+  	<transition name="fade">
+	    <keep-alive>
+	      <router-view/>
+	    </keep-alive>
+    </transition>
   </div>
 </template>
 
@@ -11,12 +16,15 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin:0;
-  padding: 0;
+.fade-enter-active {
+  transition: all .3s ease;
+}
+/*.fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}*/
+.fade-enter, .fade-leave-to
+{
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

@@ -12,7 +12,8 @@
 			<div class="area">
 				<div class="title border-topbottom">热门城市</div>
 				<div class="button-list">
-					<div class="button-wrapper" v-for="item of hot" :key="item.id" @click="handleCityClick(item.name)">
+					<div class="button-wrapper" v-for="item of hot" :key="item.id" 
+					@click="handleCityClick(item.name)">
 						<div class="button">{{item.name}}</div>
 					</div>
 				</div>
@@ -47,16 +48,22 @@ export default{
 			currentCity:'city'
 		})
 	},
+	mounted(){
+		console.log('mounted')
+		this.$nextTick(function(){
+			console.log('mounted-nexttick')
+			this.scroll = new Bscroll(this.$refs.wrapper,{click:true})
+		})
+		
+	},
 	methods:{
 		handleCityClick(city){
+			console.log(city)
 			// this.$store.dispatch('changeCity',city)
 			this.changeCity(city)
 			this.$router.push('/')
 		},
 		...mapMutations(['changeCity'])
-	},
-	mounted(){
-		this.scroll = new Bscroll(this.$refs.wrapper)
 	},
 	watch:{
 		letter(){
@@ -65,8 +72,7 @@ export default{
 				this.scroll.scrollToElement(element)
 			}
 		}
-	},
-
+	}
 }
 </script>
 <style lang="stylus" scoped>
