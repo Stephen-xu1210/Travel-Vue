@@ -35,6 +35,7 @@
 		},
 		methods:{
 			handleScroll(){
+				// top存储的是页面的滚动距离（相对于高度）
 				const top = document.documentElement.scrollTop
 				if(top > 50){
 					let opacity = top/140
@@ -48,6 +49,13 @@
 		},
 		activated(){
 			window.addEventListener('scroll',this.handleScroll)
+		},
+		// 解绑全局事件 因为操作的对象是为window  会对全局造成影响；
+		// 若只是在组件标签上 绑定事件  只会影响该组件   但操作window就会对全局造成影响 
+		// 所以使用deactivated生命周期钩子   它是在即将离开页面  去往新页面时 会触发
+		// 所以在离开本页面后  便移除这个全局事件监听  优化提升性能
+		deactivated(){
+			window.removeEventListener('scroll',this.handleScroll)
 		}
 	}
 </script>
