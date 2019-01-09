@@ -34,21 +34,24 @@
 			}
 		},
 		methods:{
-			handleScroll(){
-				// top存储的是页面的滚动距离（相对于高度）
-				const top = document.documentElement.scrollTop
-				if(top > 50){
-					let opacity = top/140
-					opacity = opacity > 1 ? 1 : opacity
-					this.opacityStyle = { opacity }
-					this.showAbs = false
-				}else{
-					this.showAbs = true
+				handleScroll(){
+					// top存储的是页面的滚动距离（相对于高度）
+					const top = document.documentElement.scrollTop
+					if(top > 50){
+						let opacity = top/140
+						opacity = opacity > 1 ? 1 : opacity
+						this.opacityStyle = { opacity }
+						this.showAbs = false
+					}else{
+						this.showAbs = true
+					}
 				}
-			}
 		},
 		activated(){
-			window.addEventListener('scroll',this.handleScroll)
+			this.$nextTick(function(){
+				window.addEventListener('scroll',this.handleScroll)
+			})
+			
 		},
 		// 解绑全局事件 因为操作的对象是为window  会对全局造成影响；
 		// 若只是在组件标签上 绑定事件  只会影响该组件   但操作window就会对全局造成影响 
