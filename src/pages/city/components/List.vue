@@ -49,7 +49,7 @@ export default{
 		})
 	},
 	mounted(){
-		console.log('mounted')
+		// console.log('mounted')
 		this.$nextTick(function(){
 			console.log('mounted-nexttick')
 			this.scroll = new Bscroll(this.$refs.wrapper,{click:true})
@@ -58,7 +58,7 @@ export default{
 	},
 	methods:{
 		handleCityClick(city){
-			console.log(city)
+			// console.log(city)
 			// this.$store.dispatch('changeCity',city)
 			this.changeCity(city)
 			this.$router.push('/')
