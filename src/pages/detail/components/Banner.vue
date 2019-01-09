@@ -9,11 +9,6 @@
 					12
 				</div>
 			</div>
-			<router-link to="/">
-				<div class="iconfont back-icon">
-					&#xe624;
-				</div>
-			</router-link>
 		</div>
 		<common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
 	</div>
